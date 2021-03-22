@@ -1,4 +1,4 @@
-package com.pai.common.swagger;
+package com.pai.common.security;
 
 /**
  * Hello world!

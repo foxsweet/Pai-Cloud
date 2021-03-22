@@ -14,7 +14,6 @@
     <module>pai-api</module>
     <module>pai-auth</module>
     <module>pai-common</module>
-    <module>pai-common/pai-common-swagger</module>
   </modules>
   <packaging>pom</packaging>
 
@@ -30,6 +29,8 @@
     <fastjson.version>1.2.75</fastjson.version>
     <swagger.fox.version>2.9.2</swagger.fox.version>
     <swagger.core.version>1.5.24</swagger.core.version>
+    <fastjson.version>1.2.75</fastjson.version>
+
 
   </properties>
 
@@ -89,7 +90,12 @@
         <artifactId>swagger-annotations</artifactId>
         <version>${swagger.core.version}</version>
       </dependency>
-
+      <!-- JSON 解析器和生成器 -->
+      <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>${fastjson.version}</version>
+      </dependency>
 
     </dependencies>
   </dependencyManagement>

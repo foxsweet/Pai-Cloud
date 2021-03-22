@@ -1,4 +1,4 @@
-package com.pai.common.swagger.config;
+package com.pai.common.security.config;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 import org.springframework.stereotype.Component;

@@ -1,4 +1,4 @@
-package com.pai.common.swagger.config;
+package com.pai.common.security.config;
 
 import com.google.common.base.Predicate;
 import com.google.common.base.Predicates;
