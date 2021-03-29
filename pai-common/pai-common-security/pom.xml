@@ -31,6 +31,25 @@
             <artifactId>springfox-swagger2</artifactId>
             <version>${swagger.fox.version}</version>
         </dependency>
+        <dependency>
+            <groupId>com.pai</groupId>
+            <artifactId>pai-common-redis</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.pai</groupId>
+            <artifactId>pai-api</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
+
+
+        <!-- Java Servlet -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+        </dependency>
 
     </dependencies>
 </project>
