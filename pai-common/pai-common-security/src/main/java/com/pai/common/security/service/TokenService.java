@@ -28,7 +28,7 @@ public class TokenService {
     /**
      * 创建令牌
      */
-    public Map<String,Object> createToken(LoginUserVO loginUserVO){
+    public Map<String, Object> createToken(LoginUserVO loginUserVO) {
 
         //生成token
         String token = IdUtils.fastUUID();
@@ -45,13 +45,10 @@ public class TokenService {
         redisService.setCacheObject(ACCESS_TOKEN + token, loginUserVO, EXPIRE_TIME, TimeUnit.SECONDS);
         return map;
 
-
-
     }
 
 
-
-    private void refreshToken(LoginUserVO loginUserVO){
+    private void refreshToken(LoginUserVO loginUserVO) {
         loginUserVO.setLoginTime(System.currentTimeMillis());
         loginUserVO.setExpireTime(loginUserVO.getLoginTime() + EXPIRE_TIME * MILLIS_SECOND);
         // 根据uuid将loginUser缓存

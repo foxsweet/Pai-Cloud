@@ -90,6 +90,12 @@
             <version>1.0</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>com.pai</groupId>
+            <artifactId>pai-common-security</artifactId>
+            <version>1.0</version>
+            <scope>compile</scope>
+        </dependency>
         <!-- Apache Lang3 -->
         <dependency>
             <groupId>org.apache.commons</groupId>
