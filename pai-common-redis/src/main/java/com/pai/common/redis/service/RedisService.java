@@ -53,5 +53,14 @@ public class RedisService {
         return operation.get(key);
     }
 
+    /**
+     * 删除指定val
+     *
+     * @param key
+     * @return
+     */
+    public boolean deleteObject(final String key) {
+        return redisTemplate.delete(key);
+    }
 
 }
