@@ -2,6 +2,7 @@ package com.pai.modules.service.impl;
 
 import com.pai.api.domain.SysUser;
 import com.pai.common.core.utils.StringUtils;
+import com.pai.modules.mapper.MenuMapper;
 import com.pai.modules.mapper.UserMapper;
 import com.pai.modules.service.MenusService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -17,11 +18,11 @@ import java.util.Set;
 public class MenusServiceImpl implements MenusService {
 
     @Autowired
-    private UserMapper userMapper;
+    private MenuMapper menuMapper;
 
     @Override
     public Set<String> selectMenusPermsByUserId(Long userId) {
-        List<String> strings = userMapper.selectUserByUsername(userId);
+        List<String> strings = menuMapper.selectMenuPermsByUserId(userId);
         Set<String> permsSet = new HashSet<>();
         for (String perm : strings)
         {

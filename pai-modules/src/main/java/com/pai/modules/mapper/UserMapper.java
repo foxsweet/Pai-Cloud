@@ -17,7 +17,7 @@ public interface UserMapper {
      * @param username
      * @return
      */
-     public List<String> selectUserByUsername(Long username);
+     public SysUser selectUserByUsername(String username);
 
 
 }
