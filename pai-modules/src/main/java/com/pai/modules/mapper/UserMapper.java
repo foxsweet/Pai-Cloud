@@ -3,6 +3,8 @@ package com.pai.modules.mapper;
 import com.pai.api.domain.SysUser;
 import org.springframework.stereotype.Component;
 
+import java.util.List;
+
 /**
  * @创建人 dmm
  */
@@ -15,7 +17,7 @@ public interface UserMapper {
      * @param username
      * @return
      */
-     public SysUser selectUserByUsername(String username);
+     public List<String> selectUserByUsername(Long username);
 
 
 }
