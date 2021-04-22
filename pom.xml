@@ -14,7 +14,6 @@
     <module>pai-api</module>
     <module>pai-auth</module>
     <module>pai-common</module>
-    <module>pai-common-redis</module>
   </modules>
   <packaging>pom</packaging>
 

@@ -23,6 +23,7 @@
     <modules>
         <module>pai-common-core</module>
         <module>pai-common-security</module>
+        <module>pai-common-redis</module>
     </modules>
 
 
