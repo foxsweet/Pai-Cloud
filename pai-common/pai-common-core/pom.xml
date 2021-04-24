@@ -58,7 +58,11 @@
           <groupId>javax.servlet</groupId>
           <artifactId>javax.servlet-api</artifactId>
       </dependency>
-
+    <!-- Apache Lang3 -->
+    <dependency>
+      <groupId>org.apache.commons</groupId>
+      <artifactId>commons-lang3</artifactId>
+    </dependency>
 
   </dependencies>
 

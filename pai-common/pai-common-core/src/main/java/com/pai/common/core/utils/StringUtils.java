@@ -1,9 +1,11 @@
 package com.pai.common.core.utils;
 
+import java.util.List;
+
 /**
  * @创建人 dmm
  */
-public class StringUtils {
+public class StringUtils extends org.apache.commons.lang3.StringUtils {
 
     /**
      * 空字符串
@@ -43,6 +45,27 @@ public class StringUtils {
      */
     public static boolean isNotNull(Object object) {
         return !isNull(object);
+    }
+
+
+    public static boolean matches(String str , List<String> strs){
+        if(isEmpty(str)|| isEmpty(strs.toString())){
+            return false;
+        }
+        for(String st : strs){
+            if(str.equals(st)){
+                return true;
+            }
+        }
+        return false;
+    }
+
+    public static boolean isEmpty(String str){
+        if(null == str || str.trim()==""){
+            return true;
+        }else {
+            return false;
+        }
     }
 
 }
