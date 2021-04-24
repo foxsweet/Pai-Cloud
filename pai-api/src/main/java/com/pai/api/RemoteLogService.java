@@ -36,4 +36,5 @@ public interface RemoteLogService {
                               @RequestParam("message") String message);
 
 
+
 }
