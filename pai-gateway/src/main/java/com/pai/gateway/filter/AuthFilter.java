@@ -3,6 +3,7 @@ package com.pai.gateway.filter;
 import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.JSONObject;
 import com.pai.common.core.constant.CacheConstants;
+import com.pai.common.core.constant.Constants;
 import com.pai.common.core.domain.R;
 import com.pai.common.core.utils.StringUtils;
 import com.pai.gateway.config.properties.IgnoreWhiteProperties;
@@ -33,6 +34,8 @@ public class AuthFilter implements GlobalFilter, Ordered {
 
     private static final Logger logger = LoggerFactory.getLogger(AuthFilter.class);
 
+    private final static long EXPIRE_Time = Constants.TOKEN_EXPIRE*60;
+
     @Autowired
     private IgnoreWhiteProperties ignoreWhiteProperties;
 
@@ -60,7 +63,12 @@ public class AuthFilter implements GlobalFilter, Ordered {
         JSONObject jsonObject = JSONObject.parseObject(userStr);
         String userId = jsonObject.getString("userId");
         String username = jsonObject.getString("username");
-        //if(S)
+        if(StringUtils.isBlank(userId)|| StringUtils.isBlank(username)){
+            return setUnauthorizedResponse(exchange,"令牌校验失败");
+        }
+        //设置过期时间
+        redisService.expire(getToken(exchange.getRequest()),EXPIRE_Time);
+
 
 
 

@@ -63,4 +63,18 @@ public class RedisService {
         return redisTemplate.delete(key);
     }
 
+    /**
+     * 设置有效时间
+     * @param key
+     * @param timeout
+     * @return
+     */
+    public boolean expire(final String key,final long timeout){
+        return expire(key,timeout,TimeUnit.SECONDS);
+    }
+
+    public boolean expire(final String key,final long timeout,final TimeUnit unit){
+        return redisTemplate.expire(key,timeout,unit);
+    }
+
 }
