@@ -68,14 +68,11 @@ public class AuthFilter implements GlobalFilter, Ordered {
         }
         //设置过期时间
         redisService.expire(getToken(exchange.getRequest()),EXPIRE_Time);
-
-
-
-
-
-
-
-        return null;
+        //设置用户信息到请求
+        ServerHttpRequest header = (ServerHttpRequest) exchange.getRequest().mutate().header(CacheConstants.DETAILS_USER_ID, userId)
+                .header(CacheConstants.DETAILS_USERNAME, username);
+        ServerWebExchange build = exchange.mutate().request(header).build();
+        return chain.filter(build);
     }
 
     @Override
